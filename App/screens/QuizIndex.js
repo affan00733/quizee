@@ -1,13 +1,15 @@
 import React, { Component } from "react";
-import { ScrollView, StatusBar, SafeAreaView } from "react-native";
-import { Container, Header, View, Button, Icon, Fab } from 'native-base';
-
+import { ScrollView, StatusBar, SafeAreaView,Dimensions } from "react-native";
+import { Container, Header, View, Button, Fab } from 'native-base';
+import Icon from 'react-native-vector-icons/FontAwesome'
 import spaceQuestions from "../data/space";
 import westernsQuestions from "../data/westerns";
 import computerQuestions from "../data/computers";
 import {fire} from './firbase'
 import { RowItem } from "../components/RowItem";
 let email ='';
+const { height, width } = Dimensions.get('window')
+
 export default class QuizIndex extends Component {
   constructor(props) {
     super(props)
@@ -81,7 +83,7 @@ componentDidMount(){
             }
           />
         </SafeAreaView>
-        <View style={{paddingTop : 250}}>
+        <View style={{paddingTop : Dimensions.get('window').height * 0.55}}>
           <Fab
             active={this.state.active}
             direction="up"
@@ -89,10 +91,10 @@ componentDidMount(){
             style={{ backgroundColor: '#5067FF' }}
             position="bottomRight"
             onPress={() => this.setState({ active: !this.state.active })}>
-            <Icon name="settings" />
+            <Icon name="cogs" size={60} color="#900"/>
            
             <Button  onPress={()=>this.logout()} style={{ backgroundColor: '#DD5144' }}>
-              <Icon name="refresh" />
+              <Icon name="sign-out"  size={30} color="white"/>
             </Button>
           </Fab>
           </View>

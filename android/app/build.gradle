@@ -108,6 +108,14 @@ android {
         versionCode 1
         versionName "1.0"
     }
+    signingConfigs {
+        release {
+            storeFile file(MYAPP_RELEASE_STORE_FILE)
+            storePassword MYAPP_RELEASE_STORE_PASSWORD
+            keyAlias MYAPP_RELEASE_KEY_ALIAS
+            keyPassword MYAPP_RELEASE_KEY_PASSWORD
+        }
+    }
     splits {
         abi {
             reset()
@@ -119,6 +127,7 @@ android {
     buildTypes {
         release {
             minifyEnabled enableProguardInReleaseBuilds
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
@@ -138,6 +147,8 @@ android {
 }
 
 dependencies {
+    implementation project(':react-native-splash-screen')
+    implementation project(':react-native-vector-icons')
     implementation project(':react-native-smtp-mailer')
     implementation project(':react-native-reanimated')
     implementation project(':react-native-gesture-handler')

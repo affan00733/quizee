@@ -1,5 +1,7 @@
 import { createStackNavigator, createAppContainer } from "react-navigation";
-
+import React ,{Component}from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import SplashScreen from 'react-native-splash-screen'
 import QuizIndex from "./screens/QuizIndex";
 import Quiz from "./screens/Quiz";
 import Login from './screens/login'
@@ -38,4 +40,16 @@ const MainStack = createStackNavigator({
   }
 });
 
-export default createAppContainer(MainStack);
+const St = createAppContainer(MainStack);
+
+export default class App extends Component {
+
+  componentDidMount(){
+    SplashScreen.hide();
+  }
+  render(){
+    return(
+      <St />
+    )
+  }
+}
