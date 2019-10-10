@@ -50,11 +50,11 @@ componentDidMount(){
         <StatusBar barStyle="dark-content" />
         <SafeAreaView style ={{}}>
           <RowItem 
-            name="Space"
+            name="Emergency Measures"
             color="#36b1f0"
             onPress={() =>
               this.props.navigation.navigate("Quiz", {
-                title: "Space",
+                title: "Emergency Measures",
                 questions: spaceQuestions,
                 color: "#36b1f0"
               })
@@ -72,11 +72,11 @@ componentDidMount(){
             }
           />
           <RowItem
-            name="Computers"
+            name="Preventive Mesures"
             color="#49475B"
             onPress={() =>
               this.props.navigation.navigate("Quiz", {
-                title: "Computers",
+                title: "Preventive Mesure",
                 questions: computerQuestions,
                 color: "#49475B"
               })
@@ -97,7 +97,10 @@ componentDidMount(){
               <Icon name="sign-out"  size={30} color="white"/>
             </Button>
             <Button  onPress={()=>this.props.navigation.navigate('Video')} style={{ backgroundColor: '#DD5144' }}>
-              <Icon name="sign-out"  size={30} color="white"/>
+              <Icon name="fire-extinguisher"  size={30} color="white"/>
+            </Button>
+            <Button  onPress={()=>this.props.navigation.navigate('About')} style={{ backgroundColor: '#DD5144' }}>
+              <Icon name="fire-extinguisher"  size={30} color="white"/>
             </Button>
           </Fab>
         

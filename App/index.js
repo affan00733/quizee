@@ -1,4 +1,4 @@
-import { createStackNavigator, createAppContainer } from "react-navigation";
+import { createStackNavigator,createSwitchNavigator, createAppContainer } from "react-navigation";
 import React ,{Component}from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import SplashScreen from 'react-native-splash-screen'
@@ -7,6 +7,7 @@ import Quiz from "./screens/Quiz";
 import Login from './screens/login'
 import Register from './screens/register'
 import Video from './screens/video'
+import About from './screens/about'
 const MainStack = createStackNavigator({
   Login : {
     screen : Login,
@@ -43,11 +44,50 @@ const MainStack = createStackNavigator({
     })
   },
   Video : {
-    screen : Video
+    screen : Video,
+    navigationOptions: {
+
+      headerTitle: "Fire Extinguisher",
+
+      headerTransparent : false
+
+    }
+  },
+  About : {
+    screen : About,
+    navigationOptions: {
+
+      headerTitle: "About Us",
+
+      headerTransparent : false
+
+    }
   }
 });
 
-const St = createAppContainer(MainStack);
+// const Video1 = createStackNavigator({
+//   Video : {
+//     screen : Video,
+//     navigationOptions: {
+//       headerTitle: "Fire Extinguisher",
+
+//       headerTransparent : false
+
+//     }
+//   }
+// })
+
+const Sw = createSwitchNavigator({
+  MainStack : {
+    screen : MainStack
+  },
+  // Video1  :{
+  //   screen : Video1
+  // }
+})
+
+
+const St = createAppContainer(Sw);
 
 export default class App extends Component {
 
