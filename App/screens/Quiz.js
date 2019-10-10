@@ -75,6 +75,8 @@ class Quiz extends React.Component {
           nextState.correctCount = state.correctCount + 1;
           nextState.answerCorrect = true;
         } else {
+          nextState.correctCount = state.correctCount + 1;
+
           nextState.answerCorrect = false;
         }
 

@@ -6,7 +6,7 @@ import QuizIndex from "./screens/QuizIndex";
 import Quiz from "./screens/Quiz";
 import Login from './screens/login'
 import Register from './screens/register'
-
+import Video from './screens/video'
 const MainStack = createStackNavigator({
   Login : {
     screen : Login,
@@ -24,7 +24,9 @@ const MainStack = createStackNavigator({
   QuizIndex: {
     screen: QuizIndex,
     navigationOptions: {
-      headerTitle: "Quizzes"
+      headerTitle: "Quizzes",
+      // headerTransparent : true
+
     }
   },
   Quiz: {
@@ -32,11 +34,16 @@ const MainStack = createStackNavigator({
     navigationOptions: ({ navigation }) => ({
       headerTitle: navigation.getParam("title"),
       headerTintColor: "#fff",
+      // headerTransparent : true
+
       headerStyle: {
         backgroundColor: navigation.getParam("color"),
         borderBottomColor: navigation.getParam("color")
       }
     })
+  },
+  Video : {
+    screen : Video
   }
 });
 

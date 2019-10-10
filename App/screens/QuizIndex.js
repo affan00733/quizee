@@ -46,10 +46,10 @@ componentDidMount(){
   render() {
     return (
 
-      <ScrollView style={{ flex: 1 }}>
+      <ScrollView style ={{}} >
         <StatusBar barStyle="dark-content" />
-        <SafeAreaView>
-          <RowItem
+        <SafeAreaView style ={{}}>
+          <RowItem 
             name="Space"
             color="#36b1f0"
             onPress={() =>
@@ -96,7 +96,11 @@ componentDidMount(){
             <Button  onPress={()=>this.logout()} style={{ backgroundColor: '#DD5144' }}>
               <Icon name="sign-out"  size={30} color="white"/>
             </Button>
+            <Button  onPress={()=>this.props.navigation.navigate('Video')} style={{ backgroundColor: '#DD5144' }}>
+              <Icon name="sign-out"  size={30} color="white"/>
+            </Button>
           </Fab>
+        
           </View>
       </ScrollView>
 
