@@ -7,7 +7,7 @@ export default class About extends Component{
     render(){
         return(
             <WebView
-            source={{uri: 'https://www.fsai.in/about-us'}}
+            source={{uri: 'https://www.fsai.in/contact-us'}}
             style={{}}
           />
         )

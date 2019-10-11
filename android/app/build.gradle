@@ -158,6 +158,7 @@ android {
 }
 
 dependencies {
+    implementation project(':react-native-sound')
     implementation project(':react-native-video')
     implementation project(':react-native-android-fullscreen-webview-video')
     implementation project(':react-native-splash-screen')

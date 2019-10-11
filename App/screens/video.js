@@ -142,7 +142,6 @@ onBackdropPress={() => this.setState({ vissible: false })}
 // width="auto"
 // height="auto"
 >
-{/* <Text>Hello from Overlay!</Text> */}
 <Video source={require('../video/fireEx.mp4')}   
        ref={(ref) => {
          this.player = ref

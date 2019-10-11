@@ -49,12 +49,14 @@ componentDidMount(){
       <ScrollView style ={{}} >
         <StatusBar barStyle="dark-content" />
         <SafeAreaView style ={{}}>
+
+          
           <RowItem 
-            name="Emergency Measures"
+            name="Emergency Measures "
             color="#36b1f0"
             onPress={() =>
               this.props.navigation.navigate("Quiz", {
-                title: "Emergency Measures",
+                title: "Emergency Measures .",
                 questions: spaceQuestions,
                 color: "#36b1f0"
               })
@@ -65,7 +67,7 @@ componentDidMount(){
             color="#799496"
             onPress={() =>
               this.props.navigation.navigate("Quiz", {
-                title: "Westerns",
+                title: "Westerns .",
                 questions: westernsQuestions,
                 color: "#799496"
               })
@@ -76,14 +78,14 @@ componentDidMount(){
             color="#49475B"
             onPress={() =>
               this.props.navigation.navigate("Quiz", {
-                title: "Preventive Mesure",
+                title: "Preventive Measures.",
                 questions: computerQuestions,
                 color: "#49475B"
               })
             }
           />
         </SafeAreaView>
-        <View style={{paddingTop : Dimensions.get('window').height * 0.55}}>
+        <View style={{paddingTop : Dimensions.get('window').height * 0.30}}>
           <Fab
             active={this.state.active}
             direction="up"
@@ -91,16 +93,25 @@ componentDidMount(){
             style={{ backgroundColor: '#5067FF' }}
             position="bottomRight"
             onPress={() => this.setState({ active: !this.state.active })}>
-            <Icon name="cogs" size={60} color="#900"/>
+            <Icon name="info" size={60} color="#900"/>
            
-            <Button  onPress={()=>this.logout()} style={{ backgroundColor: '#DD5144' }}>
+            <Button  onPress={()=>this.logout()} style={{ backgroundColor: '#27AE60' }}>
               <Icon name="sign-out"  size={30} color="white"/>
             </Button>
             <Button  onPress={()=>this.props.navigation.navigate('Video')} style={{ backgroundColor: '#DD5144' }}>
               <Icon name="fire-extinguisher"  size={30} color="white"/>
             </Button>
-            <Button  onPress={()=>this.props.navigation.navigate('About')} style={{ backgroundColor: '#DD5144' }}>
-              <Icon name="fire-extinguisher"  size={30} color="white"/>
+            <Button  onPress={()=>this.props.navigation.navigate('News')} style={{ backgroundColor: '#B5C53E' }}>
+              <Icon name="mobile"  size={30} color="white"/>
+            </Button>
+            <Button  onPress={()=>this.props.navigation.navigate('About')} style={{ backgroundColor: '#F1C40F' }}>
+              <Icon name="users"  size={30} color="white"/>
+            </Button>
+            <Button  onPress={()=>this.props.navigation.navigate('Contact')} style={{ backgroundColor: '#8E44AD' }}>
+              <Icon name="id-badge"  size={30} color="white"/>
+            </Button>
+            <Button  onPress={()=>this.props.navigation.navigate('Product')} style={{ backgroundColor: '#2E86C1' }}>
+              <Icon name="shopping-cart"  size={30} color="white"/>
             </Button>
           </Fab>
         

@@ -8,6 +8,7 @@ import { fire } from './firbase'
 // import qs from 'qs'
 import RNSmtpMailer from "react-native-smtp-mailer";
 
+import Sound from 'react-native-sound';
 
 
 let emailN = '';
@@ -63,6 +64,15 @@ class Quiz extends React.Component {
       }
     });
 
+    const sound = new Sound(require('../components/audio.mp3'), null, (error) => {
+      if (error) {
+        // do something
+      }
+      
+      // play when loaded
+      sound.play();
+    });
+
   }
   answer = (correct, ex, ans) => {
     console.log(ex);
@@ -85,7 +95,7 @@ class Quiz extends React.Component {
 
       },
       () => {
-        setTimeout(() => this.nextQuestion(ex, ans), 750);
+        setTimeout(() => this.nextQuestion(ex, ans), 1450);
       }
     );
 

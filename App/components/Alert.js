@@ -16,8 +16,8 @@ const styles = StyleSheet.create({
   },
   circle: {
     backgroundColor: "#ff4136",
-    width: screen.width / 2,
-    height: screen.width / 2,
+    width: screen.width / 2.5,
+    height: screen.width / 2.5,
     borderRadius: screen.width / 2,
     alignItems: "center",
     justifyContent: "center"

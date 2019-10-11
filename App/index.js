@@ -8,6 +8,10 @@ import Login from './screens/login'
 import Register from './screens/register'
 import Video from './screens/video'
 import About from './screens/about'
+import Contact from './screens/contact'
+import Product from './screens/product'
+import News from'./screens/news'
+
 const MainStack = createStackNavigator({
   Login : {
     screen : Login,
@@ -25,8 +29,9 @@ const MainStack = createStackNavigator({
   QuizIndex: {
     screen: QuizIndex,
     navigationOptions: {
-      headerTitle: "Quizzes",
+      headerTitle: "Quizzes  .",
       // headerTransparent : true
+      
 
     }
   },
@@ -57,7 +62,37 @@ const MainStack = createStackNavigator({
     screen : About,
     navigationOptions: {
 
-      headerTitle: "About Us",
+      headerTitle: "About Us .",
+
+      headerTransparent : false
+
+    }
+  },
+  Contact : {
+    screen : Contact,
+    navigationOptions: {
+
+      headerTitle: "Contact .",
+
+      headerTransparent : false
+
+    }
+  },
+  Product : {
+    screen : Product,
+    navigationOptions: {
+
+      headerTitle: "Product .",
+
+      headerTransparent : false
+
+    }
+  },
+  News : {
+    screen : News,
+    navigationOptions: {
+
+      headerTitle: "News .",
 
       headerTransparent : false
 
