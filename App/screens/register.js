@@ -65,12 +65,12 @@ export default class FloatingLabelExample extends Component {
             <Item style={{ backgroundColor: '#ECF0F1', borderRadius: 50, paddingBottom: 5 }} floatingLabel>
               <Label style={{ paddingLeft: 15, color: '#C0392B' }}>Email id</Label>
 
-              <Input value={this.state.username} onChangeText={(username) => this.setState({ username: username })} />
+              <Input style={{paddingLeft : 15}} value={this.state.username} onChangeText={(username) => this.setState({ username: username })} />
             </Item>
             <Item style={{ backgroundColor: '#ECF0F1', borderRadius: 50, paddingBottom: 5 }} floatingLabel>
               <Label style={{ paddingLeft: 15, color: '#C0392B' }}>Password</Label>
 
-              <Input value={this.state.password} onChangeText={(password) => this.setState({ password: password })}
+              <Input style={{paddingLeft : 15}} value={this.state.password} onChangeText={(password) => this.setState({ password: password })}
                 secureTextEntry />
             </Item>
             <View style={{ justifyContent: 'center', alignItems: 'center', paddingTop: height * 0.1 }}>

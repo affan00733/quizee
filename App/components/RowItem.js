@@ -4,10 +4,12 @@ const screen = Dimensions.get("window");
 
 const styles = StyleSheet.create({
   row: {
-    paddingHorizontal: 15,
-    paddingVertical: 20,
-    backgroundColor: "#36B1F0",
-    marginBottom: 1,
+    margin : 4,
+    paddingTop : 1,
+    height : screen.height / 4.5,
+    // borderColor : 'black',
+    // borderWidth : 3
+
   },
   text: {
     fontSize: 28,
@@ -15,29 +17,29 @@ const styles = StyleSheet.create({
     // fontWeight: "600",
     fontWeight : 'bold',
     textAlign : 'center',
-    paddingTop : screen.height * 0.045,
+    paddingTop : screen.height * 0.075,
     textAlignVertical : 'center',
     // opacity : 2,
   },
   image : {
-      height : screen.height / 6,
+    height : screen.height / 4.5,
       margin : 10,
       // width : screen.width / 2,
       borderRadius  :15,
       // opacity : 0.7
   },
   imageB : {
-    height : screen.height / 5,
+    height : screen.height * 0.5,
     margin : 10,
-    // width : screen.width / 2,
+    width : screen.width / 2,
     borderRadius  :15
 }
 });
 
 export const RowItem = ({ onPress = () => {}, name,color,textC,path }) => (
-  <TouchableOpacity onPress={onPress} activeOpacity={0.8} style={[ { backgroundColor: '' }]} >
+  <TouchableOpacity onPress={onPress} activeOpacity={0.8} style={[ styles.row, { backgroundColor: '' }]} >
    
-    <ImageBackground style ={styles.image} source={path} >
+    <ImageBackground   style ={styles.image} source={path} >
     <Text style={[styles.text,{color : textC}]}>{name}</Text>
     </ImageBackground>
   </TouchableOpacity>

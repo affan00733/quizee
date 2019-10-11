@@ -54,8 +54,8 @@ componentDidMount(){
           <RowItem 
             name="Emergency Measures "
             color="#36b1f0"
-            textC="white"
-            path={require('../assets/emer.jpeg')}
+            textC="black"
+            path={require('../dash/term.png')}
             onPress={() =>
               this.props.navigation.navigate("Quiz", {
                 title: "Emergency Measures .",
@@ -67,9 +67,9 @@ componentDidMount(){
           <RowItem
             name="Terminologies "
             color="#799496"
-            textC="white"
+            textC="black"
 
-            path={require('../assets/emer.jpeg')}
+            path={require('../dash/emer.png')}
 
             onPress={() =>
               this.props.navigation.navigate("Quiz", {
@@ -82,9 +82,9 @@ componentDidMount(){
           <RowItem
             name="Preventive Mesures"
             color="#49475B"
-            textC="white"
+            textC="black"
 
-            path={require('../assets/emer.jpeg')}
+            path={require('../dash/pre.png')}
 
             onPress={() =>
               this.props.navigation.navigate("Quiz", {
@@ -95,7 +95,7 @@ componentDidMount(){
             }
           />
         </SafeAreaView>
-        <View style={{paddingTop : Dimensions.get('window').height * 0.30}}>
+        <View style={{paddingTop : Dimensions.get('window').height * 0.20}}>
           <Fab
             active={this.state.active}
             direction="up"
