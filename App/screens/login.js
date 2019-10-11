@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {ActivityIndicator,Image,Dimensions,ToastAndroid} from 'react-native'
+import {ActivityIndicator,Image,Dimensions,ToastAndroid,StyleSheet} from 'react-native'
 import { Container, Header, Content, Form, Item, Input, Text, Label, Button, View } from 'native-base';
 import {fire} from './firbase'
 const height =  Dimensions.get('window').height;
@@ -8,17 +8,19 @@ export default class FloatingLabelExample extends Component {
     super()
     this.state = {
       username: '',
-      password: ''
+      password: '',
+      authenticating : false
+
     }
   }
   Login = async(email,password) => {
-
+    this.setState({authenticating : true})
     try{
 
-        await fire.auth().signInWithEmailAndPassword(email,password).then(function(user){
-            console.log(user)
-           
-        })
+        await fire.auth().signInWithEmailAndPassword(email,password).then(user => this.setState({
+          authenticating: false,
+          
+        }))
        
         // if(firebase.auth().signInWithEmailAndPassword(email,password)){
             this.props.navigation.navigate('QuizIndex')
@@ -28,7 +30,11 @@ export default class FloatingLabelExample extends Component {
 
     }
     catch(error){
-        alert('error');
+     
+        alert('Invalid Credentials !!');
+        this.setState({
+          authenticating : false
+        })
     }
 
 
@@ -38,20 +44,27 @@ export default class FloatingLabelExample extends Component {
   }
 
   render() {
+    if (this.state.authenticating) {
+      return (
+        <View style={styles.form}>
+        <ActivityIndicator size="large" color="#0000ff" />
+        </View>
+      )
+    }
     return (
-      <Container style={{  }}>
+      <Container style={{}}>
         <Content>
           <Form>
             <View style ={{alignItems : 'center'}}>
               <Image style={{justifyContent : 'center',alignContent : 'center',alignItems : 'center'}} source={require('../assets/fire.png')}/>
               </View>
             <Item style={{backgroundColor :'#ECF0F1',borderRadius : 50,paddingBottom : 5}} floatingLabel>
-              <Label style ={{paddingLeft : 15,color : 'orange'}}>Email id</Label>
+              <Label style ={{paddingLeft : 15,color : '#C0392B'}}>Email id</Label>
 
               <Input value = {this.state.username} onChangeText={(username) => this.setState({ username: username })} />
             </Item>
             <Item style={{backgroundColor :'#ECF0F1',borderRadius : 50,paddingBottom : 5}} floatingLabel>
-              <Label style ={{paddingLeft : 15,color : 'orange'}}>Password</Label>
+              <Label style ={{paddingLeft : 15,color : '#C0392B'}}>Password</Label>
 
               <Input value = {this.state.password} onChangeText={(password) => this.setState({ password: password })}
                 secureTextEntry />
@@ -74,3 +87,22 @@ export default class FloatingLabelExample extends Component {
     );
   }
 }
+
+
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row'
+  },
+  form: {
+    flex: 1,
+    justifyContent : 'center',
+    alignContent : 'center',
+    // alignItems : "center"
+    
+  }
+});

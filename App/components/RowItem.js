@@ -34,11 +34,11 @@ const styles = StyleSheet.create({
 }
 });
 
-export const RowItem = ({ onPress = () => {}, name, color }) => (
+export const RowItem = ({ onPress = () => {}, name,color,textC,path }) => (
   <TouchableOpacity onPress={onPress} activeOpacity={0.8} style={[ { backgroundColor: '' }]} >
    
-    <ImageBackground style ={styles.image} source={require('../assets/images.png')} >
-    <Text style={styles.text}>{name}</Text>
+    <ImageBackground style ={styles.image} source={path} >
+    <Text style={[styles.text,{color : textC}]}>{name}</Text>
     </ImageBackground>
   </TouchableOpacity>
 );

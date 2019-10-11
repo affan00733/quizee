@@ -54,6 +54,8 @@ componentDidMount(){
           <RowItem 
             name="Emergency Measures "
             color="#36b1f0"
+            textC="white"
+            path={require('../assets/emer.jpeg')}
             onPress={() =>
               this.props.navigation.navigate("Quiz", {
                 title: "Emergency Measures .",
@@ -63,11 +65,15 @@ componentDidMount(){
             }
           />
           <RowItem
-            name="Westerns"
+            name="Terminologies "
             color="#799496"
+            textC="white"
+
+            path={require('../assets/emer.jpeg')}
+
             onPress={() =>
               this.props.navigation.navigate("Quiz", {
-                title: "Westerns .",
+                title: "Terminologies .",
                 questions: westernsQuestions,
                 color: "#799496"
               })
@@ -76,6 +82,10 @@ componentDidMount(){
           <RowItem
             name="Preventive Mesures"
             color="#49475B"
+            textC="white"
+
+            path={require('../assets/emer.jpeg')}
+
             onPress={() =>
               this.props.navigation.navigate("Quiz", {
                 title: "Preventive Measures.",
